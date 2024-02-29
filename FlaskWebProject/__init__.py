@@ -11,6 +11,7 @@ from flask_session import Session
 db = SQLAlchemy()
 app = Flask(__name__)
 app.config.from_object(Config)
+app.config['DEBUG'] = True
 db = SQLAlchemy(app)
 streamHandler = logging.StreamHandler()
 streamHandler.setLevel(logging.WARNING)
