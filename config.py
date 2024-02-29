@@ -4,18 +4,16 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config(object):
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'secret-key'
+    SECRET_KEY = 'secret-key'
 
-    BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'https://vytt1storageaccount.blob.core.windows.net/images'
-    BLOB_STORAGE_KEY = os.environ.get(
-        'BLOB_STORAGE_KEY') or '98NkLG1V6ohBDzkQezwj2vlrbtCcXa0+Vgox1QjbrFGBQmlTFhuv0nb8FSvB40V59/8R/jDgwysV+AStg4WvJQ=='
-    BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'images'
+    BLOB_ACCOUNT = 'https://vytt1storageaccount.blob.core.windows.net/images'
+    BLOB_STORAGE_KEY ='98NkLG1V6ohBDzkQezwj2vlrbtCcXa0+Vgox1QjbrFGBQmlTFhuv0nb8FSvB40V59/8R/jDgwysV+AStg4WvJQ=='
+    BLOB_CONTAINER = 'images'
 
-    SQL_SERVER = os.environ.get(
-        'SQL_SERVER') or '113.166.88.222'
-    SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'vytt1-db'
-    SQL_USER_NAME = os.environ.get('SQL_USER_NAME') or 'cmsadmin'
-    SQL_PASSWORD = os.environ.get('SQL_PASSWORD') or 'Rebound@991224'
+    SQL_SERVER = 'vytt1-server.database.windows.net'
+    SQL_DATABASE ='vytt1-db'
+    SQL_USER_NAME = 'cmsadmin'
+    SQL_PASSWORD = 'Rebound@991224'
     # Below URI may need some adjustments for driver version, based on your OS, if running locally
     SQLALCHEMY_DATABASE_URI = 'mssql+pyodbc://' + SQL_USER_NAME + '@' + SQL_SERVER + ':' + \
         SQL_PASSWORD + '@' + SQL_SERVER + ':1433/' + \
