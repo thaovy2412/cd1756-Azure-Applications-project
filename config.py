@@ -12,7 +12,7 @@ class Config(object):
     BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'images'
 
     SQL_SERVER = os.environ.get(
-        'SQL_SERVER') or 'vytt1-server.database.windows.net'
+        'SQL_SERVER') or '113.166.88.222'
     SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'vytt1-db'
     SQL_USER_NAME = os.environ.get('SQL_USER_NAME') or 'cmsadmin'
     SQL_PASSWORD = os.environ.get('SQL_PASSWORD') or 'Rebound@991224'
