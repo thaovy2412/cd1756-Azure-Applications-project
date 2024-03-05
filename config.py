@@ -12,7 +12,7 @@ class Config(object):
     SQL_SERVER = os.environ.get('SQL_SERVER') or 'vytt1-sql-server.database.windows.net'
     SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'vytt1-db'
     SQL_USER_NAME = os.environ.get('SQL_USER_NAME') or 'sqlserveradmin'
-    SQL_PASSWORD = os.environ.get('SQL_PASSWORD') or 'password123@'
+    SQL_PASSWORD = os.environ.get('SQL_PASSWORD') or 'p@ssword123'
     # Below URI may need some adjustments for driver version, based on your OS, if running locally
     SQLALCHEMY_DATABASE_URI = 'mssql+pyodbc://' + SQL_USER_NAME + '@' + SQL_SERVER + ':' + SQL_PASSWORD + '@' + SQL_SERVER + ':1433/' + SQL_DATABASE  + '?driver=ODBC+Driver+18+for+SQL+Server' + ';Connect Timeout=300'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
