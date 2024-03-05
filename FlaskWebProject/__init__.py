@@ -8,7 +8,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_session import Session
 
-db = SQLAlchemy()
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
