@@ -63,11 +63,9 @@ class Post(db.Model):
             Randomfilename = id_generator()
             filename = Randomfilename + '.' + fileextension
             try:
-                container_client = blob_service.get_container_client(container=blob_container)
-                blob_service = container_client.upload_blob(name=filename, data=file, overwrite=True)
+                blob_service.create_blob_from_stream(blob_container, filename, file)
                 if(self.image_path):
-                    blob_client = blob_service.get_blob_client(container=blob_container, blob=self.image_path)
-                    blob_client.delete_blob()
+                    blob_service.delete_blob(blob_container, self.image_path)
             except Exception:
                 flash(Exception)
             self.image_path = filename
