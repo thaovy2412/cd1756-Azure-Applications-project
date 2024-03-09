@@ -52,4 +52,25 @@ class Post(db.Model):
         return '<Post {}>'.format(self.body)
 
     def save_changes(self, form, file, userId, new=False):
-        print('Hello')
+        self.title = form.title.data
+        self.author = form.author.data
+        self.body = form.body.data
+        self.user_id = userId
+
+        if file:
+            filename = secure_filename(file.filename)
+            fileextension = filename.rsplit('.', 1)[1]
+            Randomfilename = id_generator()
+            filename = Randomfilename + '.' + fileextension
+            try:
+                blob_client = blob_service.get_blob_client(container=blob_container, blob=filename)
+                blob_client.upload_blob(file)
+                if(self.image_path):
+                    blob_client = blob_service.get_blob_client(container=blob_container, blob=self.image_path)
+                    blob_service.delete_blob()
+            except Exception:
+                flash(Exception)
+            self.image_path = filename
+        if new:
+            db.session.add(self)
+        db.session.commit()
