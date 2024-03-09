@@ -5,8 +5,8 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'secret-key'
 
-    BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'https://vytt1storageaccount.blob.core.windows.net/images'
-    BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'GG6QxWLDrHOpiobUmg87sjD4LRI0uVvL0KPM2sBwSvh9/aGWSqveCbKFOhthUXkpyD9F8xdzxlQP+ASt546MMw=='
+    BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'vytt1storageaccount'
+    BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'n+4OLWO7qFgVYI8Vu6WgKOvlySKwElVbN6XvYcjFlVxK0u+sETub10W6cr8xPVCkDlevFGlQBHAT+AStCJXL4A=='
     BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'images'
 
     SQL_SERVER = os.environ.get('SQL_SERVER') or 'vytt1-sql-server.database.windows.net'
