@@ -10,7 +10,7 @@ from flask import flash
 
 blob_container = app.config['BLOB_CONTAINER']
 blob_service = BlobServiceClient(
-    account_url=app.config['BLOB_ACCOUNT'])
+    account_url=app.config['BLOB_ACCOUNT'], credential=app.config['BLOB_STORAGE_KEY'])
 
 
 def id_generator(size=32, chars=string.ascii_uppercase + string.digits):
