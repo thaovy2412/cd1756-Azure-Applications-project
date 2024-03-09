@@ -13,7 +13,7 @@ from FlaskWebProject.models import User, Post
 import msal
 import uuid
 
-imageSourceUrl = app.config['BLOB_ACCOUNT'] + '/' + app.config['BLOB_CONTAINER'] + '/'
+imageSourceUrl = app.config['BLOB_ACCOUNT'] + '/'
 
 
 @app.route('/')
